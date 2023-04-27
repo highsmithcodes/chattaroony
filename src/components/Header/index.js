@@ -6,6 +6,7 @@ function Header() {
         <header>
             <Link to="/">Home</Link>
             <Link to="/registration">Register</Link>
+            <Link to="/login">Login</Link>
         </header>
      );
 }
