@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <AuthContextProvider>
+        {/* Add Jest */}
         <Header/>
         <Routes>
           <Route exact path="/" element={<Homepage/>} />
