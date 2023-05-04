@@ -5,14 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start:dev": "nodemon babel-node src/index.js",
+    "start:dev2": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-datasource-mongodb": "^0.5.4",
     "apollo-server": "^3.12.0",
+    "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
-    "nodemon": "^2.0.22"
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22",
+    "rimraf": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5"
   }
 }
