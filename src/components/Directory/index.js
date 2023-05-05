@@ -1,11 +1,15 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from '@apollo/client';
 import DisplayData from '../DisplayData';
+import * as dotenv from 'dotenv';
+dotenv.config()
+
+const DATABASE_URL = process.env.DATABASE_URL;
 
 function Directory() {
 
     const client = new ApolloClient({
         cache: new InMemoryCache(),
-        uri: "mongodb://ezrahighsmith:t7UjAQ7NN37bV9Hw@cluster0.cyx9iuz.mongodb.net/?retryWrites=true&w=majority"
+        uri: DATABASE_URL
     })
 
     return ( 
