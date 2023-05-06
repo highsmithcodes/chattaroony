@@ -1,15 +1,12 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from '@apollo/client';
 import DisplayData from '../DisplayData';
-import * as dotenv from 'dotenv';
-dotenv.config()
-
-const DATABASE_URL = process.env.DATABASE_URL;
+const dotenv = require('dotenv/config');
 
 function Directory() {
 
     const client = new ApolloClient({
         cache: new InMemoryCache(),
-        uri: DATABASE_URL
+        uri: process.env.DATABASE_URL
     })
 
     return ( 
