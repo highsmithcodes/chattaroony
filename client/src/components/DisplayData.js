@@ -24,7 +24,11 @@ function DisplayData() {
 
     return ( 
         <div>
-
+            {data && data.getMovies.map((movie) => {
+                return <div>
+                    <h4>{movie.title}</h4>
+                </div>
+            })}
         </div>
      );
 }

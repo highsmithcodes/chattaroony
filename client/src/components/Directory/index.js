@@ -11,7 +11,7 @@ import {
 
 function Directory() {
 
-    const graphqlUri = `mongodb+srv://ezrahighsmith:t7UjAQ7NN37bV9Hw@cluster0.cyx9iuz.mongodb.net/?retryWrites=true&w=majority`;
+    const graphqlUri = `http://localhost:4000/`;
 
     const client = new ApolloClient({
         link: new HttpLink({
