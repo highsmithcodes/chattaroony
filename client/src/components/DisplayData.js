@@ -19,7 +19,7 @@ function DisplayData() {
     const { data } = useQuery(QUERY_ALL_MOVIES);
 
     if(data) {
-        console.log(data);
+        console.log('data', data);
     }
 
     return ( 
