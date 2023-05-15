@@ -26,8 +26,8 @@ const SignIn = () => {
     }, [user])
 
     return ( 
-        <div>
-            <h1>Sign In Component</h1>
+        <div class="container mx-auto p-5">
+            <div className='text-xl pb-4'>Sign In First to See the Project</div>
             <GoogleButton onClick={handleGoogleSignIn} />
         </div>
      );

@@ -7,12 +7,10 @@ function Directory() {
 
     return ( 
       
-        <div>
-            <div>
-                <h1>List Of Movies</h1>
-                {/* Display Data */}
-                <DisplayData />
-            </div>
+        
+        <div className='mt-5 flex justify-center items-center flex-col mx-auto'>
+            {/* Display Data */}
+            <DisplayData />
         </div>
 
      );

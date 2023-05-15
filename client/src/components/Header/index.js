@@ -1,4 +1,4 @@
-import './style.scss';
+import '../../default.scss';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 
@@ -15,14 +15,14 @@ function Header() {
     }
 
     return ( 
-        <header>
-            <Link to="/">Home</Link>
-            <Link to="/registration">Register</Link>
+        <header className='p-8 bg-gray-400'>
+            <Link to="/" className='pr-4'>Home</Link>
+            {/* <Link to="/registration" className='pr-4'>Register</Link> */}
 
             {user ? (
-                <button onClick={handleSignOut}>Logout</button> 
+                <button onClick={handleSignOut} className='pr-4'>Logout</button> 
             ) : ( 
-                <Link to="/login">Login</Link>
+                <Link to="/login" className='pr-4'>Login</Link>
             )}
         </header>
      );
