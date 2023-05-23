@@ -10,7 +10,7 @@ function Homepage() {
                         <h1 class="text-3xl md:text-5xl py-2 text-yellow-300 tracking-loose">Brainbee</h1>
                         <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Knowledge : An invaluable asset
                         </h2>
-                        <p class="text-sm md:text-base text-gray-50 mb-4">Browse our collection of our courses and find the right one for you</p>
+                        <p class="text-sm md:text-base text-gray-50 mb-4">Browse our collection of courses and find the right one for you</p>
                         {/* <a href="#"
                             class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
                             Explore Now</a> */}
