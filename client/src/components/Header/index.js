@@ -17,13 +17,14 @@ function Header() {
     return ( 
         <header className='p-8 bg-gray-400'>
             <Link to="/" className='pr-4'>Home</Link>
+            <Link to="/cart" className='pr-4'>Cart</Link>
             {/* <Link to="/registration" className='pr-4'>Register</Link> */}
 
-            {user ? (
+            {/* {user ? (
                 <button onClick={handleSignOut} className='pr-4'>Logout</button> 
             ) : ( 
                 <Link to="/login" className='pr-4'>Login</Link>
-            )}
+            )} */}
         </header>
      );
 }

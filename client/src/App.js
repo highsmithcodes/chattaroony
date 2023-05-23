@@ -18,10 +18,11 @@ function App() {
         <AuthContextProvider>
           <Header/>
           <Routes>
-            <Route exact path="/" element={<Protected><Homepage/></Protected>} />
-            <Route path="/registration" element={<Registration/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/account" element={<Protected><Account/></Protected>} />
+            <Route exact path="/" element={<Homepage/>} />
+            {/* <Route path="/registration" element={<Registration/>} />
+            <Route path="/login" element={<Login/>} /> */}
+            {/* <Route path="/account" element={<Protected><Account/></Protected>} /> */}
+            {/* <Route path="/account" element={<Account/>} /> */}
           </Routes>
         </AuthContextProvider>
       </div>

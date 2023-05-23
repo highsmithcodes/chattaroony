@@ -25,11 +25,11 @@ function DisplayData(props) {
     const movie = data ? data.movie : null;
     const [updateMovie, { loading: updating }] = useMutation(UPDATE_MOVIE);
     const [newTitleText, setNewTitleText] = useState("Add New Title Here");
-    // const { data } = useQuery(QUERY_ALL_MOVIES);
+    const { data2 } = useQuery(QUERY_ALL_MOVIES);
 
-    // if(data) {
-    //     console.log('data', data);
-    // }
+    if(data2) {
+        console.log('data', data);
+    }
 
     const updateMovieTitle = async () => {
         if (!movie) return;
@@ -90,11 +90,11 @@ function DisplayData(props) {
             </div>
           )}
             <ul className='list-disc'>
-                {/* {data && data.movies.map((movie) => {
+                {data2 && data2.movies.map((movie) => {
                     return <li>
                         <h4>{movie.title}</h4>
                     </li>
-                })} */}
+                })}
             </ul>
         </>
      );
