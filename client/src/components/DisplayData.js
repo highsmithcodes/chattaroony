@@ -17,85 +17,41 @@ function DisplayData(props) {
     const APP_ID = process.env.REACT_APP_MONGO_ID;
     // console.log(APP_ID)
 
-    const [searchText, setSearchText] = useState("Big Hero 6");
-    const { loading, data } = useQuery(FIND_MOVIE, {
-      variables: { query: { title: searchText } }
-    });
+    // const [searchText, setSearchText] = useState("Big Hero 6");
+    // const { loading, data } = useQuery(FIND_MOVIE, {
+    //   variables: { query: { title: searchText } }
+    // });
   
-    const movie = data ? data.movie : null;
-    const [updateMovie, { loading: updating }] = useMutation(UPDATE_MOVIE);
-    const [newTitleText, setNewTitleText] = useState("Add New Title Here");
-    const { data2 } = useQuery(QUERY_ALL_MOVIES);
+    // const movie = data ? data.movie : null;
+    // const [updateMovie, { loading: updating }] = useMutation(UPDATE_MOVIE);
+    // const [newTitleText, setNewTitleText] = useState("Add New Title Here");
+    const { data } = useQuery(QUERY_ALL_MOVIES);
 
-    if(data2) {
-        console.log('data', data);
+    if(data) {
+        console.log('data2', data);
     }
 
-    const updateMovieTitle = async () => {
-        if (!movie) return;
-        await updateMovie({
-            variables: {
-            query: { title: movie.title },
-            set: { title: newTitleText }
-            }
-        });
-        setSearchText(newTitleText);
-    };
+    // const updateMovieTitle = async () => {
+    //     if (!movie) return;
+    //     await updateMovie({
+    //         variables: {
+    //         query: { title: movie.title },
+    //         set: { title: newTitleText }
+    //         }
+    //     });
+    //     setSearchText(newTitleText);
+    // };
 
     return ( 
         <>
-          <div className='text-5xl pb-4 mb-5'>Find a Movie and Change the title</div>
-          <span className="subheading mb-3">
-            The app automatically searches as you type
-          </span>
-          {/* Fix the case sensitivity when searching */}
-          <div className="title-input">
-            <input
-              className="border-solid border-2 border-indigo-600 p-2"
-              value={searchText}
-              onChange={e => setSearchText(e.target.value)}
-              type="text"
-            />
-          </div>
-          {APP_ID === "data-tfgdc" ? (
-            <>
-            </>
-          ) : (
-            !loading &&
-            !movie && <div className="status">No movie with that name in this database.</div>
-          )}
-          {movie && (
-            <div>
-              <div className='text-xl pb-4 font-bold text-center mt-4'>{movie.title}</div>
-            <img alt={`Poster for ${movie.title}`} src={movie.poster} />
-              <br />
-              {!updating && (
-                <div className="title-input mt-5 text-center">
-                  <div className='text-xl mb-2 font-bold text-center mt-4'>Change <b>{movie.title}</b> movie title to:</div>
-                  <input
-                    type="text"
-                    className="border-solid border-2 border-indigo-600 p-2 mt-4"
-                    value={newTitleText}
-                    onChange={e => setNewTitleText(e.target.value)}
-                  />
-                  <button
-                    className="bg-gray-400 p-4 rounded-xl block mx-auto mt-4"
-                    onClick={() => updateMovieTitle()}
-                  >
-                    Submit Title Change
-                  </button>
-                
-                </div>
-              )}
-            </div>
-          )}
-            <ul className='list-disc'>
-                {data2 && data2.movies.map((movie) => {
-                    return <li>
-                        <h4>{movie.title}</h4>
-                    </li>
-                })}
-            </ul>
+            {data && data.movies.map((movie) => {
+              return   <div>
+                  <img class="h-96 w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80" alt="" />
+                  <h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
+                  <p class="mt-2 text-lg uppercase tracking-wider text-blue-500 dark:text-blue-400">{movie.title}</p>
+              </div>
+             })}
+
         </>
      );
 }
