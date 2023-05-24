@@ -5,6 +5,7 @@ export const FIND_MOVIE = gql`
     movie(query: $query) {
       _id
       title
+      image
     }
   }
 `;
@@ -13,6 +14,7 @@ export const UPDATE_MOVIE = gql`
     updateOneMovie(query: $query, set: $set) {
       _id
       title
+      image
     }
   }
 `;

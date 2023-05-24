@@ -5,7 +5,7 @@ const typeDefs = gql`
     id: ID!
     title: String!
     rating: Float!
-    year: Int!
+    image: String!
   }
 
   type Query {
@@ -14,7 +14,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createMovie(title: String!, rating: Float!, year: Int!): Movie!
+    createMovie(title: String!, rating: Float!, image: String!): Movie!
   }
 `;
 

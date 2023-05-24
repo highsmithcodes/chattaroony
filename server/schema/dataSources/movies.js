@@ -9,8 +9,8 @@ class Movies extends MongoDataSource {
     return await this.findOneById(id);
   }
 
-  async createMovie({ title, rating, year }) {
-    return await this.model.create({ title, rating, year });
+  async createMovie({ title, rating, image }) {
+    return await this.model.create({ title, rating, image });
   }
 }
 
