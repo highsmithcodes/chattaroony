@@ -7,6 +7,7 @@ const { resolvers } = require("./schema/resolvers");
 // const { MongoDataSource} = require('./schema/models/movie');
 const { Movies } = require('./schema/dataSources/movies');
 const { Movie: MovieModel} = require('./schema/models/movie');
+const { InMemoryLRUCache } = require('@apollo/utils.keyvaluecache');
 
 
 // const MovieModel = MongoDataSource;
@@ -24,7 +25,8 @@ const dataSources = () => ({
   movies: new Movies(MovieModel),
 });
 
-const server = new ApolloServer({ typeDefs, resolvers, dataSources })
+// Apollo Server Caching Issue?
+const server = new ApolloServer({ typeDefs, resolvers, dataSources})
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);

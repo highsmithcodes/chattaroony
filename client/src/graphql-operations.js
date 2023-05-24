@@ -5,16 +5,19 @@ export const FIND_MOVIE = gql`
     movie(query: $query) {
       _id
       title
-      image
+      thumbnail
+      description
     }
   }
 `;
+
 export const UPDATE_MOVIE = gql`
   mutation UpdateMovie($query: MovieQueryInput!, $set: MovieUpdateInput!) {
     updateOneMovie(query: $query, set: $set) {
       _id
       title
-      image
+      thumbnail
+      description
     }
   }
 `;

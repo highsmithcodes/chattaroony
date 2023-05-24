@@ -1,11 +1,11 @@
 const { gql } = require("apollo-server");
 
 const typeDefs = gql`
-  type Movie {
+  type Movie{
     id: ID!
     title: String!
-    rating: Float!
-    image: String!
+    thumbnail: String!
+    description: String!
   }
 
   type Query {
@@ -14,7 +14,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createMovie(title: String!, rating: Float!, image: String!): Movie!
+    createMovie(title: String!, thumbnail: String!, description: String!): Movie!
   }
 `;
 

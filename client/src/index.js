@@ -11,6 +11,7 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
+
 // Realm
 import * as Realm from "realm-web";
 // Check out app.js for examples of how to run GraphQL operations
@@ -54,6 +55,11 @@ async function getValidAccessToken() {
   return app.currentUser.accessToken;
 }
 
+const cache = new InMemoryCache();
+
+// schema cached
+// https://www.mongodb.com/community/forums/t/graphql-schema-update/5043
+
 // Configure the ApolloClient to connect to your app's GraphQL endpoint
 const client = new ApolloClient({
   link: new HttpLink({
@@ -69,7 +75,7 @@ const client = new ApolloClient({
       return fetch(uri, options);
     },
   }),
-  cache: new InMemoryCache(),
+  cache,
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
