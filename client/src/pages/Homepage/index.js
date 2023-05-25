@@ -28,9 +28,7 @@ function Homepage() {
 			    </div>
 		    </div>
        
-            <div class="container mx-auto p-5">
-                <Directory />
-            </div>
+            <Directory />
 
             <section class="bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6 pt-28">

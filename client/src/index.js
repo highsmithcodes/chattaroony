@@ -12,20 +12,10 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 
+
 // Realm
 import * as Realm from "realm-web";
-// Check out app.js for examples of how to run GraphQL operations
 
-// To set up your app:
-//
-// 1. Link a cluster that includes the MongoDB Atlas sample data sets
-// 2. Configure permissions for the ``sample_mflix.movies`` collection. For this
-//    demo, you can assign full read/write permissions to the default role.
-// 3. Generate a collection schema for the ``sample_mflix.movies`` collection.
-// 4. Enable anonymous authentication
-// 5. Deploy your changes
-//
-// Once your app is set up, replace the value of APP_ID with your App ID
 export const APP_ID = process.env.REACT_APP_MONGO_ID;
 
 // Connect to your MongoDB Realm app
@@ -43,8 +33,7 @@ async function getValidAccessToken() {
     // const user = await app.logIn(credentials);
     // console.assert(user.id === app.currentUser.id);
 
-
-    await app.currentUser.refreshCustomData();
+    await app.logIn(Realm.Credentials.anonymous());
 
   } else {
     // An already logged in user's access token might be stale. To guarantee that the token is
@@ -75,8 +64,10 @@ const client = new ApolloClient({
       return fetch(uri, options);
     },
   }),
-  cache,
+  cache
 });
+
+client.resetStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

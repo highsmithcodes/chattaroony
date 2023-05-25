@@ -7,8 +7,9 @@ function Directory() {
 
     return ( 
         <>
+
             <section class="bg-white dark:bg-gray-900">
-                <div class="container mx-auto px-6 pt-28">
+                <div class="container mx-auto px-6 pt-28 dark:bg-gray-900">
                     <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Browse Our Collection</h1>
             
                     <div class="mt-8 lg:-mx-12 lg:flex xl:mt-16">
