@@ -58,10 +58,13 @@ function DisplayData(props) {
     return ( 
         <>
             {data && data.movies.map((movie) => {
-              return   <div>
-                  <img class="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" />
+              return   <div className="p-8">
+                    <div className="bg-white p-8 shadow-md">
+                  <img class="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 150, height: 150, margin: '0 auto' }} />
+                  </div>
                   <h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
-                  <p class="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.description}</p>
+                  <p class="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
+                  <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">{movie.description}</p>
               </div>
              })}
         </>

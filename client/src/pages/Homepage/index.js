@@ -18,11 +18,11 @@ function Homepage() {
 			        <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
 				        <div class="h-48 flex flex-wrap content-center">
 					        <div>
-						    <img class="inline-block mt-28 hidden xl:block" src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png" /></div>
+						    <img class="inline-block mt-28 hidden xl:block" src="https://github.com/highsmithcodes/chattaroony/assets/17016293/baa8f96f-78bc-4ba8-a330-187b66365276" /></div>
 						    <div>
-							    <img class="inline-block mt-24 md:mt-0 p-8 md:p-0"  src="https://user-images.githubusercontent.com/54521023/116969931-bedb0100-acd4-11eb-99a9-ff5e0ee9f31f.png" /></div>
+							    <img class="inline-block mt-24 md:mt-0 p-8 md:p-0"  src="https://github.com/highsmithcodes/chattaroony/assets/17016293/9cb4fdac-2e06-4304-9e0a-9ea7d071380a" /></div>
 							<div>
-								<img class="inline-block mt-28 hidden lg:block" src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png" /></div>
+								<img class="inline-block mt-28 hidden lg:block" src="https://github.com/highsmithcodes/chattaroony/assets/17016293/ef943fd7-8700-4852-b893-dfc72d50c963" /></div>
 							</div>
 						</div>
 			    </div>
