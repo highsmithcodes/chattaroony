@@ -67,3 +67,12 @@ To recreate this project
 
 ![web](https://github.com/highsmithcodes/chattaroony/assets/17016293/5f6a5e41-4058-4ec6-9193-f20aa583174b)
 
+![banner1](https://github.com/highsmithcodes/chattaroony/assets/17016293/9cb4fdac-2e06-4304-9e0a-9ea7d071380a)
+
+![banner2](https://github.com/highsmithcodes/chattaroony/assets/17016293/baa8f96f-78bc-4ba8-a330-187b66365276)
+
+![banner3](https://github.com/highsmithcodes/chattaroony/assets/17016293/ef943fd7-8700-4852-b893-dfc72d50c963)
+
+
+
+
