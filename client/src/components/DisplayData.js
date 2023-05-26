@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FIND_MOVIE, UPDATE_MOVIE } from "../graphql-operations";
 
 
-const QUERY_ALL_MOVIES = gql`
+export const QUERY_ALL_MOVIES = gql`
     query GetAllMovies {
         movies {
             _id
@@ -55,17 +55,20 @@ function DisplayData(props) {
           stopPolling();
         };
       }, []);
+
     return ( 
         <>
             {data && data.movies.map((movie) => {
-              return   <div className="p-8">
+              return   <><div className="p-8" key={movie._id}>
                     <div className="bg-white p-8 shadow-md">
-                  <img class="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 150, height: 150, margin: '0 auto' }} />
+                  <img className="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 100, height: 100, margin: '0 auto' }} />
                   </div>
-                  <h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
-                  <p class="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
+                  <h2 className="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
+                  <p className="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
                   <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">{movie.description}</p>
               </div>
+  
+                </>
              })}
         </>
      );
