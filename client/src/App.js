@@ -9,6 +9,7 @@ import Account from './pages/Account';
 import Protected from './components/Protected';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { setContext } from "apollo-link-context";
+import Single from './pages/Single';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Header/>
           <Routes>
             <Route exact path="/" element={<Homepage/>} />
+            <Route exact path="/product/:id" element={<Single />} />
             {/* <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} /> */}
             {/* <Route path="/account" element={<Protected><Account/></Protected>} /> */}
