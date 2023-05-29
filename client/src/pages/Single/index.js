@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 // Define your GraphQL query
 
 const GET_MOVIE = gql`
-  query getMovie($id: ID!) {
+  query getMovie($id: Int) {
     movies(id: $id) {
       title
       description
