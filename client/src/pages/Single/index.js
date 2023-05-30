@@ -1,26 +1,17 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+import { FIND_MOVIE_BY_ID } from "../../graphql-operations";
 
-// ...
-
-const GET_MOVIE = gql`
-    query ($id: String!) {
-      getMovie: movie(id: $id) {
-            _id
-            title
-            thumbnail
-            description
-        }
-    }
-`
 
 function Single() {
     const { postId } = useParams();
     console.log('postId:', postId);
   
-    const { loading, error, data } = useQuery(GET_MOVIE, {
-      variables: { id: postId },
+    const { loading, error, data } = useQuery(FIND_MOVIE_BY_ID, {
+      // variables: { id: postId },
+      variables: { query: { id: postId } }
     });
+
   
     if (loading) {
         return <p>Loading...</p>;
