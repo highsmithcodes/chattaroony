@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const FIND_MOVIE = gql`
-  query FindMovie($query: MovieQueryInput!) {
+  query FindMovie($query: MovieQueryInput) {
     movie(query: $query) {
       _id
       title
@@ -12,8 +12,8 @@ export const FIND_MOVIE = gql`
 `;
 
 export const FIND_MOVIE_BY_ID = gql`
-  query FindMovieByID($query: MovieQueryInput) {
-    movie(query: $query) {
+  query FindMovieByID($id: ObjectId! ) {
+    movie(query: { _id: $id }) {
       _id
       title
       thumbnail

@@ -5,6 +5,7 @@ import { FIND_MOVIE_BY_ID } from "../../graphql-operations";
 
 function Single() {
     const { postId } = useParams();
+    const postIdHardcoded = '646e68ea58db9b5d3b8cc499';
     console.log('postId:', postId);
   
     const { loading, error, data } = useQuery(FIND_MOVIE_BY_ID, {
