@@ -4,13 +4,15 @@ import { useParams } from 'react-router-dom';
 // ...
 
 const GET_MOVIE = gql`
-  query getMovie($id: String) {
-    movies(id: $id) {
-      title
-      description
+    query ($id: String!) {
+      getMovie: movie(id: $id) {
+            _id
+            title
+            thumbnail
+            description
+        }
     }
-  }
-`;
+`
 
 function Single() {
     const { postId } = useParams();

@@ -16,7 +16,7 @@ export const QUERY_ALL_MOVIES = gql`
 `
 
 
-function DisplayData(props) {
+function DisplayData() {
 
     // const [searchText, setSearchText] = useState("Big Hero 6");
     // const { loading, data } = useQuery(FIND_MOVIE, {
