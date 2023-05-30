@@ -20,7 +20,7 @@ function App() {
           <Header/>
           <Routes>
             <Route exact path="/" element={<Homepage/>} />
-            <Route exact path="/product/:id" element={<Single />} />
+            <Route exact path="/products/:postId" element={<Single />} />
             {/* <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} /> */}
             {/* <Route path="/account" element={<Protected><Account/></Protected>} /> */}
