@@ -30,7 +30,7 @@ export default function Products() {
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {data && data.movies.map((movie) => {
                     return   <>
-                     <Link to={"/products/" + movie._id}>
+                     <Link to={"/products" + movie._id}>
                     <div className="p-8" key={movie._id}>
                     <div className="bg-white max-w-2xl rounded-3xl ring-1 ring-gray-200 p-5 lg:mx-0 lg:flex lg:max-w-none">
                   <img className="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 100, height: 100, margin: '0 auto' }} />
