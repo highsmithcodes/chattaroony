@@ -79,13 +79,13 @@ function Single() {
       // variables: { query: { id: postIdHardcoded } }
     });
 
-    const cartItemIds = useReactiveVar(itemsInCart)
-    // + vvv
-    const removeFromCart = useCallback(id => {
-      const remainingItems = cartItemIds.filter(item => item !== id)
-      // This will trigger the re-render due to useReactiveVar
-      itemsInCart(remainingItems)
-    }, [cartItemIds])
+    // const cartItemIds = useReactiveVar(itemsInCart)
+    // // + vvv
+    // const removeFromCart = useCallback(id => {
+    //   const remainingItems = cartItemIds.filter(item => item !== id)
+    //   // This will trigger the re-render due to useReactiveVar
+    //   itemsInCart(remainingItems)
+    // }, [cartItemIds])
 
   
     if (loading) {
@@ -315,7 +315,11 @@ function Single() {
               </RadioGroup>
             </div> */}
 
-            <button onClick={() => removeFromCart(item.id)}
+            {/* <button onClick={() => removeFromCart(item.id)}
+              type="submit"
+              className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            > */}
+            <button
               type="submit"
               className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
