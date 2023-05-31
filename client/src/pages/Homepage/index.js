@@ -8,18 +8,18 @@ import { CheckIcon } from '@heroicons/react/20/solid'
 
 const features = [
     {
-      name: 'Push to deploy.',
+      name: 'Browse Collection.',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
       icon: CloudArrowUpIcon,
     },
     {
-      name: 'SSL certificates.',
+      name: 'Purchase Courses.',
       description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
       icon: LockClosedIcon,
     },
     {
-      name: 'Database backups.',
+      name: 'Expand your mind.',
       description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
       icon: ServerIcon,
     },
@@ -53,31 +53,30 @@ function Homepage() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-indigo-600">
+              Browse our catalog of courses.{' '}
+              <a href="/products/" className="font-semibold text-indigo-600">
                 <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
+                Go to Courses <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+              Courses to expand your technical journey
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Find a new topic, continue expanding on your passions, enjoy an affordable collection of courses.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/products/"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Get started
+                Get Started
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -105,8 +104,8 @@ function Homepage() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+              <h2 className="text-base font-semibold leading-7 text-indigo-600">Learn faster</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better way to learn</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
                 iste dolor cupiditate blanditiis ratione.
@@ -125,7 +124,7 @@ function Homepage() {
             </div>
           </div>
           <img
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+            src="https://github.com/highsmithcodes/chattaroony/assets/17016293/8a29db5a-2829-40ca-bf57-27233912ce4e"
             alt="Product screenshot"
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
             width={2432}
@@ -139,8 +138,7 @@ function Homepage() {
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple no-tricks pricing</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas
-            in. Explicabo id ut laborum.
+            Pay for what you want or sign up for a subscription to unlock all of BrainBee's courses.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
@@ -171,7 +169,7 @@ function Homepage() {
               <div className="mx-auto max-w-xs px-8">
                 <p className="text-base font-semibold text-gray-600">Pay once, own it forever</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-gray-900">$349</span>
+                  <span className="text-5xl font-bold tracking-tight text-gray-900">$30</span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
                 </p>
                 <a

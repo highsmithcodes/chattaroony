@@ -1,5 +1,16 @@
 import gql from "graphql-tag";
 
+export const QUERY_ALL_MOVIES = gql`
+    query GetAllMovies {
+        movies {
+            _id
+            title
+            thumbnail
+            description
+        }
+    }
+`
+
 export const FIND_MOVIE = gql`
   query FindMovie($query: MovieQueryInput) {
     movie(query: $query) {

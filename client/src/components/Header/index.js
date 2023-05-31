@@ -7,10 +7,9 @@ import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/rea
 import logo from '../../apple.svg';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Testimonials', href: '#', current: false },
-  { name: 'Cart', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Products', href: '/products/', current: false },
+  { name: 'Cart', href: '/cart/', current: false },
 ]
 
 function classNames(...classes) {
@@ -48,6 +47,7 @@ function Header() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
+                  <Link to="/">
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src={logo}
@@ -58,6 +58,7 @@ function Header() {
                     src={logo}
                     alt="Your Company"
                   />
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -83,7 +84,9 @@ function Header() {
                   className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">View notifications</span>
+                  <Link to="/cart/">
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                  </Link>
                 </button>
 
              

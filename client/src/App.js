@@ -10,6 +10,7 @@ import Protected from './components/Protected';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { setContext } from "apollo-link-context";
 import Single from './pages/Single';
+import Products from './pages/Products/Products';
 import Cart from './pages/Cart/Cart';
 
 
@@ -22,6 +23,7 @@ function App() {
           <Header/>
           <Routes>
             <Route exact path="/" element={<Homepage/>} />
+            <Route exact path="/products" element={<Products />} />
             <Route exact path="/products/:postId" element={<Single />} />
             <Route exact path="/cart" element={<Cart />} />
             {/* <Route path="/registration" element={<Registration/>} />
