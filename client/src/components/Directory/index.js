@@ -13,10 +13,10 @@ function Directory() {
                         <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Table of Content</h1>
             
                         <div className="mt-4 space-y-4 lg:mt-8">
-                        <a href="/products" className="block text-base font-semibold leading-7 text-indigo-600">Web design</a>
-                        <a href="/products" className="block text-base font-semibold leading-7 text-gray-600">App design</a>
-                        <a href="/products" className="block text-base font-semibold leading-7 text-gray-600">Branding</a>
-                        <a href="/products" className="block text-base font-semibold leading-7 text-gray-600">Animation</a>
+                        <a href="/products/" className="block text-base font-semibold leading-7 text-indigo-600">Web design</a>
+                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">App design</a>
+                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Branding</a>
+                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Animation</a>
                         </div>
                     </div>
             
