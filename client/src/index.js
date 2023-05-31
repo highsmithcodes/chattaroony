@@ -11,6 +11,7 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
+import { makeVar } from '@apollo/client';
 
 
 // Realm
@@ -44,7 +45,23 @@ async function getValidAccessToken() {
   return app.currentUser.accessToken;
 }
 
-const cache = new InMemoryCache();
+export const itemsInCart = makeVar([]) // We start with no item selected
+
+
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: { // boilerplate
+        cartItemIds: {
+          read() {
+            return itemsInCart()
+          }
+        }
+      }
+    }
+  }
+})
+
 
 // schema cached
 // https://www.mongodb.com/community/forums/t/graphql-schema-update/5043

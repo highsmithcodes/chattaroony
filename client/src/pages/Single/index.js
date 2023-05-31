@@ -4,14 +4,18 @@ import { FIND_MOVIE_BY_ID } from "../../graphql-operations";
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
+import { GET_CART } from '../../graphql-operations';
+import { useReactiveVar } from "@apollo/client";
+import {itemsInCart} from '../../index';
+import { useCallback } from 'react';
 
 const product = {
   name: 'Basic Tee 6-Pack',
   price: '$192',
   href: '#',
   breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
+    { id: 1, name: 'Home', href: '/' },
+    { id: 2, name: 'Products', href: '/products/' },
   ],
   images: [
     {
@@ -75,6 +79,14 @@ function Single() {
       // variables: { query: { id: postIdHardcoded } }
     });
 
+    const cartItemIds = useReactiveVar(itemsInCart)
+    // + vvv
+    const removeFromCart = useCallback(id => {
+      const remainingItems = cartItemIds.filter(item => item !== id)
+      // This will trigger the re-render due to useReactiveVar
+      itemsInCart(remainingItems)
+    }, [cartItemIds])
+
   
     if (loading) {
         return <p>Loading...</p>;
@@ -102,6 +114,7 @@ function Single() {
     // Access movie data
     const movie = data?.movie;
     console.log('movie', movie);
+
 
   return (
     <div className="bg-white">
@@ -302,7 +315,7 @@ function Single() {
               </RadioGroup>
             </div>
 
-            <button
+            <button onClick={() => removeFromCart(item.id)}
               type="submit"
               className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
