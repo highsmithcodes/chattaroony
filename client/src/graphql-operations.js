@@ -11,7 +11,20 @@ export const FIND_MOVIE = gql`
   }
 `;
 
-export const FIND_MOVIE_BY_ID = gql`
+// Error: Variable "$id" got invalid value "646e68ea58db9b5d3b8cc499". Expected "MovieQueryInput", found not an object.
+// export const FIND_MOVIE_BY_ID = gql`    
+//   query FindMovieByID($id: MovieQueryInput! ) {
+//     movie(query: { _id: $id }) {
+//       _id
+//       title
+//       thumbnail
+//       description
+//     }
+//   }
+// `;
+
+
+export const FIND_MOVIE_BY_ID = gql`    
   query FindMovieByID($id: ObjectId! ) {
     movie(query: { _id: $id }) {
       _id
