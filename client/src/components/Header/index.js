@@ -60,7 +60,7 @@ function Header() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-slates' : 'text-slate-300 hover:bg-slate-700 hover:text-white',
+                          item.current ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-blue-600 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
