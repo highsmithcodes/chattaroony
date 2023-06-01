@@ -12,6 +12,7 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 import { makeVar } from '@apollo/client';
+import { CustomInMemoryCache } from './components/Cache/Cache';
 
 
 // Realm
@@ -48,19 +49,19 @@ async function getValidAccessToken() {
 export const itemsInCart = makeVar([]) // We start with no item selected
 
 
-const cache = new InMemoryCache({
-  typePolicies: {
-    Query: {
-      fields: { // boilerplate
-        cartItemIds: {
-          read() {
-            return itemsInCart()
-          }
-        }
-      }
-    }
-  }
-})
+// const cache = new InMemoryCache({
+//   typePolicies: {
+//     Query: {
+//       fields: { // boilerplate
+//         cartItemIds: {
+//           read() {
+//             return itemsInCart()
+//           }
+//         }
+//       }
+//     }
+//   }
+// })
 
 
 // schema cached
@@ -81,7 +82,7 @@ const client = new ApolloClient({
       return fetch(uri, options);
     },
   }),
-  cache
+  cache: CustomInMemoryCache
 });
 
 client.resetStore();

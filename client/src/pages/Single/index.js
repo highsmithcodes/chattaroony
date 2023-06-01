@@ -1,10 +1,11 @@
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { FIND_MOVIE_BY_ID } from "../../graphql-operations";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { GET_CART } from '../../graphql-operations';
+import { cartItemsVar } from '../../components/Cache/Cache';
 import { useReactiveVar } from "@apollo/client";
 import {itemsInCart} from '../../index';
 import { useCallback } from 'react';
@@ -70,24 +71,15 @@ function classNames(...classes) {
 function Single() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+
     const { postId } = useParams();
     // const postIdHardcoded = '646e68ea58db9b5d3b8cc499';
     console.log('postId:', postId);
   
     const { loading, error, data } = useQuery(FIND_MOVIE_BY_ID, {
       variables: { id: postId },
-      // variables: { query: { id: postIdHardcoded } }
     });
 
-    // const cartItemIds = useReactiveVar(itemsInCart)
-    // // + vvv
-    // const removeFromCart = useCallback(id => {
-    //   const remainingItems = cartItemIds.filter(item => item !== id)
-    //   // This will trigger the re-render due to useReactiveVar
-    //   itemsInCart(remainingItems)
-    // }, [cartItemIds])
-
-  
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -95,26 +87,33 @@ function Single() {
     if (error) {
         return <p>Error: {error.message}</p>;
     }
-
-    // Check if data and getMovie field exist
-    // if (!data || !data.getMovie) {
-    //     // Handle case when data or getMovie is undefined
-    //     return <p>No movie data available.</p>;
-    // }
-
-    if (data) {
-      console.log(data)
-    }
   
     if (!data) {
       // Handle case when data or getMovie is undefined
       return <p>No movie data available.</p>;
     }
+    if (data) {
+      console.log(data);
+    }
   
     // Access movie data
     const movie = data?.movie;
-    console.log('movie', movie);
 
+    // Cart Functionality
+    // const CartItems = useReactiveVar(cartItemsVar);
+    // const moveId = movie.id
+    // let isInCart = CartItems.some(movie => movie.id === moveId);
+
+    const handleCartButtonClick = () => {
+      // cartItemsVar(
+      //   isInCart ? CartItems.filter(movie => movie.id !== moveId) : [...CartItems, movie]
+      // );
+      console.log('working')
+    }
+
+    console.log('movie', movie.title);
+
+    
 
   return (
     <div className="bg-white">
@@ -147,40 +146,6 @@ function Single() {
           </li>
         </ol>
       </nav>
-
-      {/* Image gallery */}
-      {/* <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-          <img
-            src={product.images[0].src}
-            alt={product.images[0].alt}
-            className="h-full w-full object-cover object-center"
-          />
-        </div>
-        <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-          <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-            <img
-              src={product.images[1].src}
-              alt={product.images[1].alt}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-          <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-            <img
-              src={product.images[2].src}
-              alt={product.images[2].alt}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-        </div>
-        <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-          <img
-            src={product.images[3].src}
-            alt={product.images[3].alt}
-            className="h-full w-full object-cover object-center"
-          />
-        </div>
-      </div> */}
 
       {/* Product info */}
       <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
@@ -217,113 +182,13 @@ function Single() {
           </div>
 
           <form className="mt-10">
-            {/* Colors */}
-            {/* <div>
-              <h3 className="text-sm font-medium text-gray-900">Color</h3>
-
-              <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
-                <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-                <div className="flex items-center space-x-3">
-                  {product.colors.map((color) => (
-                    <RadioGroup.Option
-                      key={color.name}
-                      value={color}
-                      className={({ active, checked }) =>
-                        classNames(
-                          color.selectedClass,
-                          active && checked ? 'ring ring-offset-1' : '',
-                          !active && checked ? 'ring-2' : '',
-                          'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none'
-                        )
-                      }
-                    >
-                      <RadioGroup.Label as="span" className="sr-only">
-                        {color.name}
-                      </RadioGroup.Label>
-                      <span
-                        aria-hidden="true"
-                        className={classNames(
-                          color.class,
-                          'h-8 w-8 rounded-full border border-black border-opacity-10'
-                        )}
-                      />
-                    </RadioGroup.Option>
-                  ))}
-                </div>
-              </RadioGroup>
-            </div> */}
-
-            {/* Sizes */}
-            {/* <div className="mt-10">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                  Size guide
-                </a>
-              </div>
-
-              <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
-                <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
-                <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                  {product.sizes.map((size) => (
-                    <RadioGroup.Option
-                      key={size.name}
-                      value={size}
-                      disabled={!size.inStock}
-                      className={({ active }) =>
-                        classNames(
-                          size.inStock
-                            ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
-                            : 'cursor-not-allowed bg-gray-50 text-gray-200',
-                          active ? 'ring-2 ring-indigo-500' : '',
-                          'group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6'
-                        )
-                      }
-                    >
-                      {({ active, checked }) => (
-                        <>
-                          <RadioGroup.Label as="span">{size.name}</RadioGroup.Label>
-                          {size.inStock ? (
-                            <span
-                              className={classNames(
-                                active ? 'border' : 'border-2',
-                                checked ? 'border-indigo-500' : 'border-transparent',
-                                'pointer-events-none absolute -inset-px rounded-md'
-                              )}
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <span
-                              aria-hidden="true"
-                              className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200"
-                            >
-                              <svg
-                                className="absolute inset-0 h-full w-full stroke-2 text-gray-200"
-                                viewBox="0 0 100 100"
-                                preserveAspectRatio="none"
-                                stroke="currentColor"
-                              >
-                                <line x1={0} y1={100} x2={100} y2={0} vectorEffect="non-scaling-stroke" />
-                              </svg>
-                            </span>
-                          )}
-                        </>
-                      )}
-                    </RadioGroup.Option>
-                  ))}
-                </div>
-              </RadioGroup>
-            </div> */}
-
-            {/* <button onClick={() => removeFromCart(item.id)}
-              type="submit"
-              className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            > */}
-            <button
-              type="submit"
-              className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Add to bag
+           
+          <button
+        type="submit"
+        onClick={handleCartButtonClick}
+        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >Add to Cart
+              {/* { isInCart ? ("Remove from Cart") : ("Add to Cart")} */}
             </button>
           </form>
         </div>
@@ -352,13 +217,6 @@ function Single() {
             </div>
           </div>
 
-          {/* <div className="mt-10">
-            <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-            <div className="mt-4 space-y-6">
-              <p className="text-sm text-gray-600">{movie.description}</p>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

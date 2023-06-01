@@ -50,14 +50,9 @@ export const ADD_MOVIE_TO_CART = gql`
   }
 `
 
-export const GET_CART = gql`
-  query GetCart($itemIds: [String!]!) {
-    cartItemIds @client @export(as: "itemIds")
-    items(ids: $itemIds) {
-      id
-      name
-      price
-    }
+export const GET_CART_ITEMS = gql`
+  query GetCartItems {
+    cartItems @client
   }
 `
 

@@ -1,34 +1,28 @@
-import {gql, useQuery} from '@apollo/client';
-import { GET_CART } from '../../graphql-operations';
-import { useReactiveVar } from "@apollo/client";
-import {itemsInCart} from '../../index';
-import { useCallback } from 'react';
-
+import { gql, useQuery  } from '@apollo/client';
+import { GET_CART_ITEMS } from '../../graphql-operations';
 
 
 function Cart() {
-    const cartItemIds = useReactiveVar(itemsInCart)
-  // + vvv
-  const removeFromCart = useCallback(id => {
-    const remainingItems = cartItemIds.filter(item => item !== id)
-    // This will trigger the re-render due to useReactiveVar
-    itemsInCart(remainingItems)
-  }, [cartItemIds])
-  // + ^^^
-  const {loading, error, data} = useQuery(GET_CART, {
-    variables: {itemIds: cartItemIds},
-  })
-  if (loading || error) return null
+  const { loading, error, data } = useQuery(GET_CART_ITEMS);
+
+  if(loading) return "Loading Cart!";
+  if(error) return <p>Error: {error.message}</p>
+
   return (
-    <ul>
-      {// Call removeFromCart on click
-      data.items.map(item => (
-        <li key={item.id} onClick={() => removeFromCart(item.id)}>
-          {`${item.name}...${item.price}$`}
-        </li>
-      ))}
-    </ul>
+    <>
+      <h4>Cart</h4>
+      {data && data.cartItems.length === 0 ? (
+        <p>There are no items in your cart!</p>
+      ) : (
+        <ul>
+          {data && data.cartItems.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
+      )}
+    </>
   )
 
 }
+
 export default Cart;
