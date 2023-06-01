@@ -6,6 +6,7 @@
     "@apollo/client": "^3.7.14",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
+    "@material-tailwind/react": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
     "apollo-link-context": "^1.0.20",

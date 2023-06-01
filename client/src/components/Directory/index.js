@@ -1,5 +1,6 @@
 // import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from '@apollo/client';
-import DisplayData from '../DisplayData';
+import DisplayData from '../DisplayData'; import { Link } from 'react-router-dom';
+
 function Directory() {
 
     return ( 
@@ -13,10 +14,10 @@ function Directory() {
                         <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Table of Content</h1>
             
                         <div className="mt-4 space-y-4 lg:mt-8">
-                        <a href="/products/" className="block text-base font-semibold leading-7 text-indigo-600">Web design</a>
-                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">App design</a>
-                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Branding</a>
-                        <a href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Animation</a>
+                        <Link href="/products/" className="block text-base font-semibold leading-7 text-indigo-600">Web design</Link>
+                        <Link href="/products/" className="block text-base font-semibold leading-7 text-gray-600">App design</Link>
+                        <Link href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Branding</Link>
+                        <Link href="/products/" className="block text-base font-semibold leading-7 text-gray-600">Animation</Link>
                         </div>
                     </div>
             

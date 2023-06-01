@@ -9,6 +9,8 @@ import { cartItemsVar } from '../../components/Cache/Cache';
 import { useReactiveVar } from "@apollo/client";
 import {itemsInCart} from '../../index';
 import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
+
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -123,9 +125,9 @@ function Single() {
           {product.breadcrumbs.map((breadcrumb) => (
             <li key={breadcrumb.id}>
               <div className="flex items-center">
-                <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
+                <Link href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
                   {breadcrumb.name}
-                </a>
+                </Link>
                 <svg
                   width={16}
                   height={20}

@@ -51,12 +51,12 @@ function Header() {
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src={logo}
-                    alt="Your Company"
+                    alt="BrainBee"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src={logo}
-                    alt="Your Company"
+                    alt="BrainBee"
                   />
                   </Link>
                 </div>
