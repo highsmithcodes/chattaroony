@@ -125,7 +125,7 @@ function Single() {
           {product.breadcrumbs.map((breadcrumb) => (
             <li key={breadcrumb.id}>
               <div className="flex items-center">
-                <Link href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
+                <Link to={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
                   {breadcrumb.name}
                 </Link>
                 <svg
