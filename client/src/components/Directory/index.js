@@ -14,7 +14,7 @@ function Directory() {
                         <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Table of Content</h1>
             
                         <div className="mt-4 space-y-4 lg:mt-8">
-                        <Link to="/products/" className="block text-base font-semibold leading-7 text-amber-600">Web design</Link>
+                        <Link to="/products/" className="block text-base font-semibold leading-7 text-blue-600">Web design</Link>
                         <Link to="/products/" className="block text-base font-semibold leading-7 text-gray-600">App design</Link>
                         <Link to="/products/" className="block text-base font-semibold leading-7 text-gray-600">Branding</Link>
                         <Link to="/products/" className="block text-base font-semibold leading-7 text-gray-600">Animation</Link>

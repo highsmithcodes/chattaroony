@@ -177,7 +177,7 @@ function Single() {
                 ))}
               </div>
               <p className="sr-only">{reviews.average} out of 5 stars</p>
-              <a href={reviews.href} className="ml-3 text-sm font-medium text-amber-600 hover:text-amber-500">
+              <a href={reviews.href} className="ml-3 text-sm font-medium text-blue-600 hover:text-blue-500">
                 {reviews.totalCount} reviews
               </a>
             </div>
@@ -188,7 +188,7 @@ function Single() {
           <button
         type="submit"
         onClick={handleCartButtonClick}
-        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-amber-600 px-8 py-3 text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >Add to Cart
               {/* { isInCart ? ("Remove from Cart") : ("Add to Cart")} */}
             </button>

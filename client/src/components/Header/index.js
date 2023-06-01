@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';import 'flowbite';
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon, LightBulbIcon } from '@heroicons/react/24/outline'
 import logo from '../../apple.svg';
 
 const navigation = [
@@ -48,16 +48,9 @@ function Header() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src={logo}
-                    alt="BrainBee"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src={logo}
-                    alt="BrainBee"
-                  />
+
+                  <LightBulbIcon className="h-6 w-6" aria-hidden="true" />
+
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -67,7 +60,7 @@ function Header() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-slate-300 hover:bg-slate-700 hover:text-white',
+                          item.current ? 'bg-gray-900 text-slates' : 'text-slate-300 hover:bg-slate-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -81,7 +74,7 @@ function Header() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="rounded-full p-1 text-gray-400 hover:text-slate focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <Link to="/cart/">

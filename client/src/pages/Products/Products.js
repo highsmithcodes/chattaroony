@@ -38,7 +38,7 @@ export default function Products() {
                   <h2 className="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
                   <p className="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
                   <p className="mt-2 text-sm text-gray-500 dark:text-gray-300 mb-5">{movie.description}</p>
-                  <Link  to={`/products/${movie._id}`} className="rounded-md bg-amber-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">Learn More</Link>
+                  <Link  to={`/products/${movie._id}`} className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Learn More</Link>
               </div>
               </Link>
               </>

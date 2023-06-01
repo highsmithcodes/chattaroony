@@ -24,11 +24,7 @@ export default function Example() {
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Typography variant="h5" className="mb-6">
-                <img
-                    className="block h-8 w-auto mb-4"
-                    src={logo}
-                    alt="BrainBee"
-                />
+                <LightBulbIcon className="block h-6 w-6 mb-4" aria-hidden="true" />
                 BrainBee
           </Typography>
           <div className="grid grid-cols-3 justify-between gap-1">
