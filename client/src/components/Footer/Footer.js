@@ -1,5 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import logo from '../../apple.svg';
+import { LightBulbIcon } from '@heroicons/react/24/outline'
 
 const LINKS = [
   {
