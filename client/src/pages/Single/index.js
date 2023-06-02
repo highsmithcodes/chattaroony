@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FIND_MOVIE_BY_ID } from "../../graphql-operations";
 import { useState, useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
@@ -10,7 +10,6 @@ import { useReactiveVar } from "@apollo/client";
 import {itemsInCart} from '../../index';
 import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -73,7 +72,7 @@ function classNames(...classes) {
 function Single() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
-
+  let navigate = useNavigate();
     const { postId } = useParams();
     // const postIdHardcoded = '646e68ea58db9b5d3b8cc499';
     console.log('postId:', postId);
@@ -119,6 +118,8 @@ function Single() {
       cartItemsVar(
         isInCart ? CartItems.filter(movie => movie.id !== moveId) : [...CartItems, movie]
       );
+      let path = `/cart/`; 
+      navigate(path);
       console.log('working')
     }
 
