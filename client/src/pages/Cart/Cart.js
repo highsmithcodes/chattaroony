@@ -53,7 +53,7 @@ function Cart() {
       {data && data.cartItems.length === 0 ? (
         <p className='pb-5'>There are no items in your cart!</p>
       ) : (<div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-2xl lg:px-8 text-center'>
-        <ul role="list" className="divide-y divide-blue-200 bg-gray-50 p-4">
+        <ul role="list" className="divide-y divide-blue-200 bg-gray-50 p-4 mb-5">
           {data && data.cartItems.map((item) => (
             <li key={item.id} className="flex justify-between gap-x-6 py-5">
             <div className="flex gap-x-4 justify-center items-center">
