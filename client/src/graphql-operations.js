@@ -44,14 +44,14 @@ export const UPDATE_MOVIE = gql`
   }
 `;
 
-export const ADD_MOVIE_TO_CART = gql`
-  query AddMovieToCart {
-    cartItemsIds @client
-  }
-`
+// export const ADD_MOVIE_TO_CART = gql`
+//   query AddMovieToCart {
+//     cartItems @client
+//   }
+// `
 
 export const GET_CART_ITEMS = gql`
-  query GetCartItems {
+  query GetAllCartItems {
     cartItems @client
   }
 `

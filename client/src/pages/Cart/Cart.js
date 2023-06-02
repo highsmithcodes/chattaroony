@@ -1,25 +1,88 @@
 import { gql, useQuery  } from '@apollo/client';
 import { GET_CART_ITEMS } from '../../graphql-operations';
+import { Link } from 'react-router-dom';
+import { XCircleIcon } from '@heroicons/react/24/outline'
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { cartItemsVar } from '../../components/Cache/Cache';
+import { useReactiveVar } from "@apollo/client";
 
 
 function Cart() {
+
+  const { postId } = useParams();
+  // const postIdHardcoded = '646e68ea58db9b5d3b8cc499';
+  console.log('postId:', postId);
+
   const { loading, error, data } = useQuery(GET_CART_ITEMS);
 
-  if(loading) return "Loading Cart!";
-  if(error) return <p>Error: {error.message}</p>
+  // if(loading) return "Loading Cart!";
+  // if(error) return <p>Error: {error.message}</p>
+
+  const [movie, setMovie] = useState([]);
+
+  // Access movie data
+  // const movie = data?.movie;
+
+  // Cart Functionality
+  const CartItems = useReactiveVar(cartItemsVar);
+  const moveId = movie.id
+  let isInCart = CartItems.some(movie => movie.id === moveId);
+
+  useEffect(() => {
+    if(data) {
+      setMovie(data);
+    }
+  }, [data])
+
+
+  const handleCartButtonClick = () => {
+    // cartItemsVar(
+    //   isInCart ? CartItems.filter(movie) : [...CartItems, movie]
+    // );
+    console.log('working')
+  }
+
+
 
   return (
     <>
+     <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 text-center">
       <h4>Cart</h4>
       {data && data.cartItems.length === 0 ? (
-        <p>There are no items in your cart!</p>
-      ) : (
-        <ul>
+        <p className='pb-5'>There are no items in your cart!</p>
+      ) : (<div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-2xl lg:px-8 text-center'>
+        <ul role="list" className="divide-y divide-blue-200 bg-gray-50 p-4">
           {data && data.cartItems.map((item) => (
-            <li key={item.id}>{item.title}</li>
+            <li key={item.id} className="flex justify-between gap-x-6 py-5">
+            <div className="flex gap-x-4 justify-center items-center">
+              <form>
+              <button onClick={handleCartButtonClick}>
+              <XCircleIcon className='h-5 w-5 flex-shrink-0'
+                    aria-hidden="true" /></button></form>
+              <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={item.thumbnail} alt="" />
+            </div><div className="hidden sm:flex sm:flex-col sm:items-end">
+            <p className="text-sm leading-6 text-gray-900">{item.title}</p>
+              <div className="mt-1 flex items-center gap-x-1.5">
+           
+                <p className="text-xs leading-5 text-gray-500">$30.00</p>
+              </div>
+ 
+          </div>
+            </li>
+
           ))}
         </ul>
+        <Link
+                href="/products/"
+                className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                Checkout
+              </Link></div>
       )}
+      </div>
+      </div>
     </>
   )
 

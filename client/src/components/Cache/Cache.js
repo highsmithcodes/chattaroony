@@ -6,7 +6,7 @@ export const CustomInMemoryCache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        cartItemIds: {
+        cartItems: {
           read() {
             return cartItemsVar();
           },

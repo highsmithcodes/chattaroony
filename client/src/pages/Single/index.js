@@ -82,38 +82,58 @@ function Single() {
       variables: { id: postId },
     });
 
-    if (loading) {
-        return <p>Loading...</p>;
-    }
+    // if (loading) {
+    //     return <p>Loading...</p>;
+    // }
   
-    if (error) {
-        return <p>Error: {error.message}</p>;
-    }
+    // if (error) {
+    //     return <p>Error: {error.message}</p>;
+    // }
   
-    if (!data) {
-      // Handle case when data or getMovie is undefined
-      return <p>No movie data available.</p>;
-    }
-    if (data) {
-      console.log(data);
-    }
+    // if (!data) {
+    //   // Handle case when data or getMovie is undefined
+    //   return <p>No movie data available.</p>;
+    // }
+    // if (data) {
+    //   console.log(data);
+    // }
+
+    const [movie, setMovie] = useState([]);
   
     // Access movie data
-    const movie = data?.movie;
+    // const movie = data?.movie;
 
     // Cart Functionality
-    // const CartItems = useReactiveVar(cartItemsVar);
-    // const moveId = movie.id
-    // let isInCart = CartItems.some(movie => movie.id === moveId);
+    const CartItems = useReactiveVar(cartItemsVar);
+    const moveId = movie.id
+    let isInCart = CartItems.some(movie => movie.id === moveId);
+
+    useEffect(() => {
+      if(data) {
+        setMovie(data?.movie);
+      }
+    }, [data])
+
 
     const handleCartButtonClick = () => {
-      // cartItemsVar(
-      //   isInCart ? CartItems.filter(movie => movie.id !== moveId) : [...CartItems, movie]
-      // );
+      cartItemsVar(
+        isInCart ? CartItems.filter(movie => movie.id !== moveId) : [...CartItems, movie]
+      );
       console.log('working')
     }
 
-    console.log('movie', movie.title);
+    // console.log('movie', movie.title);
+
+    // useEffect(() => {
+    //   (async () => {
+    //     const users = await fetchUsers();
+    //     setUsers(users);
+    //   })();
+    
+    //   return () => {
+    //     // this now gets called when the component unmounts
+    //   };
+    // }, []);
 
     
 
@@ -183,16 +203,15 @@ function Single() {
             </div>
           </div>
 
-          <form className="mt-10">
+          <div className="mt-10">
            
           <button
-        type="submit"
         onClick={handleCartButtonClick}
         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-      >Add to Cart
-              {/* { isInCart ? ("Remove from Cart") : ("Add to Cart")} */}
+      >
+              { isInCart ? ("Remove from Cart") : ("Add to Cart")}
             </button>
-          </form>
+          </div>
         </div>
 
         <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
