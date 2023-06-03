@@ -3,6 +3,7 @@
   command = "CI= npm run build"
 
 [[redirects]]
-from = "/*"
-to = "/404.html"
-status = 404
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
