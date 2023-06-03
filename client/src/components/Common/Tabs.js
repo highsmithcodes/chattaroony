@@ -18,7 +18,7 @@ export const Tabs = ({ color }) => {
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                         <a
                             className={
-                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-black hover:bg-blue-500 hover:text-white " +
+                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
                             (openTab === 1
                                 ? "text-white bg-blue-600 shadow-sm"
                                 : "text-black-600 bg-white")
@@ -37,7 +37,7 @@ export const Tabs = ({ color }) => {
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                         <a
                             className={
-                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-black hover:bg-blue-500 hover:text-white " +
+                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
                             (openTab === 2
                                 ? "text-white bg-blue-600 shadow-sm"
                                 : "text-black-600 bg-white")
@@ -56,7 +56,7 @@ export const Tabs = ({ color }) => {
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                         <a
                             className={
-                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-black hover:bg-blue-500 hover:text-white " +
+                            "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
                             (openTab === 3
                                 ? "text-white bg-blue-600 shadow-sm"
                                 : "text-black-600 bg-white")

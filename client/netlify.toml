@@ -1,3 +1,13 @@
 [build]
   publish = "build"
   command = "CI= npm run build"
+
+[[redirects]]
+from = "/en/*"
+to = "/en/404.html"
+status = 404
+
+[[redirects]]
+from = "/de/*"
+to = "/de/404.html"
+status = 404

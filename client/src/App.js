@@ -13,6 +13,7 @@ import Single from './pages/Single';
 import Products from './pages/Products/Products';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
+import Error from './pages/404/404';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/products/" element={<Products />} />
             <Route exact path="/products/:postId" element={<Single />} />
             <Route path="/cart/" element={<Cart />} />
+            <Route path="*" element={<Error />} />
             {/* <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} /> */}
             {/* <Route path="/account" element={<Protected><Account/></Protected>} /> */}
