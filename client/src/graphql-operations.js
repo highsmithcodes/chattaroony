@@ -56,3 +56,12 @@ export const GET_CART_ITEMS = gql`
   }
 `
 
+// export const REMOVE_CART_ITEMS = gql`
+//    mutation DeleteCartItem ($id: Int!) {
+//      delete_todos(where: {id: {_eq: $id}}) {
+//        affected_rows
+//      }
+//    }
+//  `;
+
+

@@ -104,7 +104,8 @@ function Single() {
 
     // Cart Functionality
     const CartItems = useReactiveVar(cartItemsVar);
-    const moveId = movie.id
+    const moveId = movie._id
+    console.log("movieId",moveId)
     let isInCart = CartItems.some(movie => movie.id === moveId);
 
     useEffect(() => {

@@ -7,7 +7,7 @@ import { Bars3Icon, BellIcon, XMarkIcon, ShoppingCartIcon, LightBulbIcon } from 
 import logo from '../../apple.svg';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
+  { name: 'Home', href: '/', current: false },
   { name: 'Products', href: '/products/', current: false },
   { name: 'Cart', href: '/cart/', current: false },
 ]
@@ -73,10 +73,10 @@ function Header() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
-                  type="button"
+                  // type="button"
                   className="rounded-full p-1 text-gray-400 hover:text-slate focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
-                  <span className="sr-only">View notifications</span>
+                  <span className="sr-only">View Cart</span>
                   <Link to="/cart/">
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                   </Link>

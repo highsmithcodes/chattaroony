@@ -26,8 +26,8 @@ function Cart() {
 
   // Cart Functionality
   const CartItems = useReactiveVar(cartItemsVar);
-  const moveId = movie.id
-  let isInCart = CartItems.some(movie => movie.id === moveId);
+  const moveId = movie._id
+  let isInCart = CartItems.some(movie => movie._id === moveId);
 
   useEffect(() => {
     if(data) {
@@ -38,9 +38,9 @@ function Cart() {
 
   const handleCartButtonClick = () => {
     // cartItemsVar(
-    //   isInCart ? CartItems.filter(movie) : [...CartItems, movie]
+    //   CartItems.filter(movie)
     // );
-    console.log('working')
+    // console.log('working')
   }
 
 
@@ -60,7 +60,8 @@ function Cart() {
               <form>
               <button onClick={handleCartButtonClick}>
               <XCircleIcon className='h-5 w-5 flex-shrink-0'
-                    aria-hidden="true" /></button></form>
+                    aria-hidden="true" /></button>
+                    </form>
               <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={item.thumbnail} alt="" />
             </div><div className="hidden sm:flex sm:flex-col sm:items-end">
             <p className="text-sm leading-6 text-gray-900">{item.title}</p>
