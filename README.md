@@ -1,4 +1,4 @@
-# Chataroony
+# BrainBee
 GraphQL API with Apollo Server using NodeJS and MongoDB Atlas
  | [View Front-End](https://exquisite-marshmallow-504670.netlify.app/).
 
