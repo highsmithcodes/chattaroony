@@ -6,7 +6,26 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { cartItemsVar } from '../../components/Cache/Cache';
 import { useReactiveVar } from "@apollo/client";
+import getStripe from '../../lib/getStripe';
+// import dotenv from 'dotenv';
+// dotenv.config();
 
+async function handleCheckout() {
+  const stripe = await getStripe();
+  const { error } = await stripe.redirectToCheckout({
+    lineItems: [
+      {
+        price: process.env.REACT_APP_PUBLIC_STRIPE_PRICE_ID,
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    successUrl: `${window.location.href}/success`,
+    cancelUrl: `${window.location.href}/cancel`,
+    customerEmail: 'customer@email.com',
+  });
+  console.warn(error.message);
+}
 
 function Cart() {
 
@@ -30,6 +49,7 @@ function Cart() {
   let isInCart = CartItems.some(movie => movie._id === moveId);
 
   useEffect(() => {
+    console.log('code', process.env.REACT_APP_PUBLIC_STRIPE_PUBLISHABLE_KEY);
     if(data) {
       setMovie(data);
     }
@@ -75,12 +95,12 @@ function Cart() {
 
           ))}
         </ul>
-        <Link
-                href="/products/"
+        <button
+                onClick={handleCheckout}
                 className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 Checkout
-              </Link></div>
+              </button></div>
       )}
       </div>
       </div>
