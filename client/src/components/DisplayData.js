@@ -2,6 +2,8 @@ import { useQuery, gql, useMutation } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import { QUERY_ALL_MOVIES } from "../graphql-operations";
 import {Link} from 'react-router-dom';
+import AWS from 'aws-sdk';
+
 
 
 function DisplayData() {
