@@ -41,7 +41,7 @@ function Homepage() {
    
 
       <div className="relative p-14">
-        <div className="container rounded-xl flex lg:flex-row xl:flex-row bg-gray-100">
+        <div className="container rounded-xl flex lg:flex-row xl:flex-row bg-gray-100 mx-auto">
           <div className="basis-1/2 hidden xs:hidden sm:hidden md:hidden xl:flex lg:flex">
             <img src={bannerimage} className="rounded-xl" />
           </div>
