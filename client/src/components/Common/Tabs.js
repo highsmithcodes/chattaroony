@@ -6,13 +6,11 @@ export const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = useState(1);
   return (
     <>
-     <section className="bg-white dark:bg-gray-900">
+     <section className="bg-white">
         <div className="container mx-auto px-6 pt-28 dark:bg-gray-900">
             <h1 className="text-2xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Browse Our Courses</h1>       
             <div className="mt-8 lg:-mx-12 lg:flex xl:mt-16">
-            <div className="lg:mx-12">
-                <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Table of Content</h1>
-    
+            <div className="lg:mx-12">    
                 <div className="mt-4 space-y-4 lg:mt-8">
                     <ul className="block mb-0 list-none flex-wrap pt-3 pb-4 flex-column" role="tablist">
                         <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
