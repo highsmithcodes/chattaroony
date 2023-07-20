@@ -51,13 +51,14 @@ function DisplayData() {
         <>
             {data && data.movies.map((movie) => {
               return   <><div className="p-8" key={movie._id}>
-                    <div className="bg-white max-w-2xl rounded-3xl ring-1 ring-gray-200 p-5 lg:mx-0 lg:flex lg:max-w-none">
+                    <div className="bg-white max-w-2xl rounded-3xl shadow-md p-5 lg:mx-0 flex flex-col lg:max-w-none">
                   <img className="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 100, height: 100, margin: '0 auto' }} />
-                  </div>
+                  
                   <h2 className="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
                   <p className="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
                   <p className="mt-2 text-sm text-gray-500 dark:text-gray-300 mb-5">{movie.description}</p>
-                  <Link  to={`/products/${movie._id}`} className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Learn More</Link>
+                  <Link  to={`/products/${movie._id}`} className="text-blue-600 pr-3.5 py-2.5 text-sm font-semibold">Learn More > </Link>
+                  </div>
               </div>
   
                 </>

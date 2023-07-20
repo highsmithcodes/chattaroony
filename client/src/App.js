@@ -14,6 +14,7 @@ import Products from './pages/Products/Products';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import Error from './pages/404/404';
+import Contact from './pages/Contact/Contact';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/" element={<Homepage/>} />
             <Route exact path="/products/" element={<Products />} />
             <Route exact path="/products/:postId" element={<Single />} />
+            <Route exact path="/contact/" element={<Contact />} />
             <Route path="/cart/" element={<Cart />} />
             <Route path="*" element={<Error />} />
             {/* <Route path="/registration" element={<Registration/>} />

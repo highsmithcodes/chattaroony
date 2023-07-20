@@ -14,7 +14,7 @@
     "aws-sdk": "^2.1397.0",
     "dotenv": "^16.0.3",
     "firebase": "^9.20.0",
-    "flowbite": "^1.6.5",
+    "flowbite": "^1.7.0",
     "flowbite-react": "^0.4.4",
     "graphql": "^16.6.0",
     "mongodb": "^5.4.0",
