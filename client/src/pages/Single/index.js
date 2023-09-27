@@ -145,7 +145,7 @@ function Single() {
     <div className="pt-6">
 
     <div className="mx-auto max-w-2xl lg:max-w-7xl lg:px-8">
-        <nav aria-label="Breadcrumb">
+        <nav aria-label="Breadcrumb" className="lg:px-0 xl:px-0 px-4">
             <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 lg:max-w-7xl lg:px-0 text-xs text-white pb-4">
               {product.breadcrumbs.map((breadcrumb) => (
                 <li key={breadcrumb.id}>
@@ -194,7 +194,7 @@ function Single() {
                 ))}
               </div>
               <p className="sr-only">{reviews.average} out of 5 stars</p>
-              <a href={reviews.href} className="ml-3 text-sm font-medium text-blue-600 hover:text-blue-500">
+              <a href={reviews.href} className="ml-3 text-sm font-medium text-cyan-600 hover:text-cyan-500">
                 {reviews.totalCount} reviews
               </a>
             </div>
@@ -204,7 +204,7 @@ function Single() {
            
           <button
         onClick={handleCartButtonClick}
-        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-cyan-500 px-8 py-3 text-base font-medium text-white hover:bg-cyan-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
               { isInCart ? ("Remove from Cart") : ("Add to Cart")}
             </button>

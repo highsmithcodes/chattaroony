@@ -60,7 +60,7 @@ function Header() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          item.current ? 'bg-blue-600 text-white' : 'text-white hover:text-gray-50',
+                          item.current ? 'bg-cyan-600 text-white' : 'text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -95,7 +95,7 @@ function Header() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-black-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-white hover:bg-white hover:text-cyan-500',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

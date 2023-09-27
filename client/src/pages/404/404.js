@@ -15,7 +15,7 @@ function Error() {
                                 doorway to the great nothing
                             </h1>
                             <p className="my-2 text-gray-800 mb-5">Sorry about that! Please visit our hompage to get where you need to go.</p>
-                            <Link to="/" className="mt-5 rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Take me there!</Link>
+                            <Link to="/" className="mt-5 rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Take me there!</Link>
                         </div>
                     </div>
                     <div>

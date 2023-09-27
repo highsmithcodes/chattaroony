@@ -16,9 +16,9 @@ export const Tabs = ({ color }) => {
                           <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                           <a
                               className={
-                              "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
+                              "block rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold hover:bg-cyan-600 hover:text-white " +
                               (openTab === 1
-                                  ? "text-white bg-blue-600 shadow-sm"
+                                  ? "text-white bg-cyan-500 shadow-sm"
                                   : "text-black-600 bg-white")
                               }
                               onClick={e => {
@@ -35,9 +35,9 @@ export const Tabs = ({ color }) => {
                           <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                           <a
                               className={
-                              "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
+                              "block rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold hover:bg-cyan-600 hover:text-white " +
                               (openTab === 2
-                                  ? "text-white bg-blue-600 shadow-sm"
+                                  ? "text-white bg-cyan-500 shadow-sm"
                                   : "text-black-600 bg-white")
                               }
                               onClick={e => {
@@ -54,9 +54,9 @@ export const Tabs = ({ color }) => {
                           <li className="-mb-px mr-2 last:mr-0 flex-auto text-left py-2">
                           <a
                               className={
-                              "block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold hover:bg-blue-500 hover:text-white " +
+                              "block rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold hover:bg-cyan-600 hover:text-white " +
                               (openTab === 3
-                                  ? "text-white bg-blue-600 shadow-sm"
+                                  ? "text-white bg-cyan-500 shadow-sm"
                                   : "text-black-600 bg-white")
                               }
                               onClick={e => {
@@ -70,7 +70,7 @@ export const Tabs = ({ color }) => {
                               Marketing
                           </a>
                           </li>
-                          {/* <Link to="/products/" className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Web design</Link>
+                          {/* <Link to="/products/" className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Web design</Link>
                           <Link to="/products/" className="block text-gray-600">App design</Link>
                           <Link to="/products/" className="block text-gray-600">Branding</Link>
                           <Link to="/products/" className="block text-gray-600">Animation</Link> */}

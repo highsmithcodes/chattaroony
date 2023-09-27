@@ -1,43 +1,34 @@
 import { useQuery, gql, useMutation } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import { QUERY_ALL_MOVIES } from "../graphql-operations";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import AWS from 'aws-sdk';
+import { useReactiveVar } from "@apollo/client";
+import { cartItemsVar } from '../components/Cache/Cache';
 
 
 
 function DisplayData() {
+  let navigate = useNavigate();
+  const [movie, setMovie] = useState([]);
+  const moveId = movie._id
 
-    // const [searchText, setSearchText] = useState("Big Hero 6");
-    // const { loading, data } = useQuery(FIND_MOVIE, {
-    //   variables: { query: { title: searchText } }
-    // });
-  
-    // const movie = data ? data.movie : null;
-    // const [updateMovie, { loading: updating }] = useMutation(UPDATE_MOVIE);
-    // const [newTitleText, setNewTitleText] = useState("Add New Title Here");
+  const CartItems = useReactiveVar(cartItemsVar);
+  let isInCart = CartItems.some(movie => movie.id === moveId);
 
-    
-    // const { data } = useQuery(QUERY_ALL_MOVIES);
-    // Solution to Caching issue in article below
-    // https://www.apollographql.com/docs/react/data/queries/#updating-cached-query-results
+  const handleCartButtonClick = () => {
+    cartItemsVar(
+      isInCart ? CartItems.filter(movie => movie.id !== moveId) : [...CartItems, movie]
+    );
+    let path = `/cart/`; 
+    navigate('/cart/');
+  }
 
     const { loading, error, data, startPolling, stopPolling } = useQuery(QUERY_ALL_MOVIES)
 
     if(data) {
         console.log('data', data);
     }
-
-    // const updateMovieTitle = async () => {
-    //     if (!movie) return;
-    //     await updateMovie({
-    //         variables: {
-    //         query: { title: movie.title },
-    //         set: { title: newTitleText }
-    //         }
-    //     });
-    //     setSearchText(newTitleText);
-    // };
 
     useEffect(() => {
         startPolling(); // poll interval
@@ -55,9 +46,12 @@ function DisplayData() {
                   <img className="h-96 w-full rounded-lg object-cover" src={movie.thumbnail} alt="" style={{ width: 100, height: 100, margin: '0 auto' }} />
                   
                   <h2 className="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">{movie.title}</h2>
-                  <p className="mt-2 text-lg tracking-wider text-blue-500 dark:text-blue-400">{movie.type}</p>
+                  <p className="mt-2 text-lg tracking-wider text-cyan-500 dark:text-blue-400">{movie.type}</p>
                   <p className="mt-2 text-sm text-gray-500 dark:text-gray-300 mb-5">{movie.description}</p>
-                  <Link  to={`/products/${movie._id}`} className="text-blue-600 pr-3.5 py-2.5 text-sm font-semibold">Learn More > </Link>
+                  <div className="flex flex-row mt-5">
+                    <button onClick={handleCartButtonClick} className="flex items-center justify-center rounded-md border border-transparent bg-cyan-500 px-4 py-3 text-base font-medium text-white hover:bg-cyan-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 mr-4">Add to Cart</button>
+                    <Link to={`/products/${movie._id}`} className="flex items-center justify-center border-solid border-cyan-500 rounded-md border bg-white px-4 py-3 text-base font-medium text-cyan-500 hover:bg-cyan-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Learn More</Link>
+                  </div>                  
                   </div>
               </div>
   

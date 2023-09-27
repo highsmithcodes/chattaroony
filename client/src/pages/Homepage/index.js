@@ -42,7 +42,7 @@ function Homepage() {
         class="bg-neutral-100 px-6 py-60 text-center text-neutral-800 bg-gradient-to-b from-cyan-500 to-blue-500">
         <h1 class="mb-6 text-5xl font-bold text-white">Discover. Learn. Enjoy</h1>
         <h3 class="mb-8 text-3xl font-light text-white">Courses for creatives around the world</h3>
-        <Link  to="" className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-600 shadow-sm hover:text-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Learn More</Link>
+        <Link  to="/products/" className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-cyan-500 shadow-sm hover:text-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Browse Products</Link>
       </div>
 
       <div className="mx-auto max-w-lg" id="neg-form"> 
@@ -152,11 +152,10 @@ function Homepage() {
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
-              repellendus etur quidem assumenda.
+                Instead of paying for individual courses, pay for a lifetime membership and gain access to everything unlimited.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-semibold leading-6 text-blue-600">What’s included</h4>
+              <h4 className="flex-none text-sm font-semibold leading-6 text-cyan-600">What’s included</h4>
               <div className="h-px flex-auto bg-gray-100" />
             </div>
             <ul
@@ -165,14 +164,14 @@ function Homepage() {
             >
               {includedFeatures.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
-                  <CheckIcon className="h-6 w-5 flex-none text-blue-600" aria-hidden="true" />
+                  <CheckIcon className="h-6 w-5 flex-none text-cyan-600" aria-hidden="true" />
                   {feature}
                 </li>
               ))}
             </ul>
           </div>
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0 ">
-            <div className="rounded-2xl bg-blue-600 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+            <div className="rounded-2xl bg-cyan-500 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto max-w-xs px-8">
                 <p className="text-base font-semibold text-white">Pay once, own it forever</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
@@ -181,7 +180,7 @@ function Homepage() {
                 </p>
                 <Link
                   to="/products/"
-                  className="mt-10 block w-full rounded-md bg-gray-50 px-3 py-2 text-center text-sm font-semibold text-black shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  className="mt-10 block w-full rounded-md bg-gray-50 px-3 py-2 text-center text-sm font-semibold text-black shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
                   Get access
                 </Link>
